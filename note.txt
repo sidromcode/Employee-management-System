@@ -1,0 +1,13 @@
+IF THERE IS NO ERROR IN THE CODE AND STILL IT SHOWS ERROR WHILE YOU TRY TO START THE SERVER, THEN IT MEANS THAT THE PORT YOU ARE USING TO OCCUPY IS IN PROCESS 
+FOR EXAMPLE PORT:3000
+
+THEN RUN THE FOLLOWING COMMANDS NOT IN BASH BUT IN POWERSHELL TERMINAL 
+STEP 1- "COMMAND":  netstat -ano | findstr :ENTER THE POR ID  :eg :  netstat -ano | findstr :3001  //the spaces inbetween the comment should be exactly like in the example
+output :   TCP    0.0.0.0:3001           0.0.0.0:0              LISTENING       17808
+  TCP    [::]:3001              [::]:0                 LISTENING       17808
+
+  here listening is the pip 
+
+  step 2- taskkill /PID 17808 /F : remember the pip id may change accordning so enter the correct pip id his is just an EXAMPLE
+output : SUCCESS: The process with PID 17808 has been terminated.
+
